@@ -14,6 +14,27 @@
       let screen = document.querySelector('canvas');
       let frame = screen.getContext("2d");
 
+      frame.fillStyle = "LightGray";
+      frame.fillRect(0, 0, 600, 400);
+
+      //Representación de una bandera
+      const sC = ["Green", "White", "Red"]; // Sprite colors
+      const sW = screen.width / sC.length; // Sprite width
+
+      for(let i = 0; i < sC.length; i++) {
+        frame.fillStyle = sC[i];
+        frame.fillRect(sW * i, 0, sW, screen.height);
+      }
+
+      /*frame.fillStyle = "Green";
+      frame.fillRect(0, 0, sprite_width, sprite_height);
+
+      frame.fillStyle = "White";
+      frame.fillRect(sprite_width, 0, sprite_width, sprite_height);
+
+      frame.fillStyle = "Red";
+      frame.fillRect(sprite_width*2, 0, sprite_width, sprite_height)*/
+
     </script>
   </body>
 
