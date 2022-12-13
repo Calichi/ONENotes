@@ -18,13 +18,25 @@
       frame.fillRect(0, 0, 600, 400);
 
       //Representación de una bandera
-      const sC = ["Green", "White", "Red"]; // Sprite colors
+      const sC = ["Green", "Transparent", "Red"]; // Sprite colors
       const sW = screen.width / sC.length; // Sprite width
 
       for(let i = 0; i < sC.length; i++) {
         frame.fillStyle = sC[i];
         frame.fillRect(sW * i, 0, sW, screen.height);
       }
+
+      frame.beginPath();
+      frame.fillStyle = "Yellow";
+      frame.moveTo(300, 200);
+      frame.lineTo(200, 400);
+      frame.lineTo(400, 400);
+      frame.fill();
+
+      frame.beginPath();
+      frame.fillStyle = "blue"
+      frame.arc(300, 200, 50, 0, 2 * Math.PI);
+      frame.fill();
 
       /*frame.fillStyle = "Green";
       frame.fillRect(0, 0, sprite_width, sprite_height);
