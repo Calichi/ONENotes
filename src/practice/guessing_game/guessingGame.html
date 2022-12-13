@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinación</title>
+  </head>
+
+  <body>
+
+    <h1>Juego de adivinación</h1>
+
+    <script type="module">
+
+      import {introduce} from '../../modules/introduce.mjs';
+      import {lottery} from '../../modules/lottery.mjs';
+
+      const msg = [
+        'Ha acertado',
+        'No introdujo ningún dato ó el dato que introdujo no es un número',
+        'Su número esta fuera del rango solicitado',
+        'Su número fue mayor al pensado',
+        'Su número fue menor al pensado'
+      ];
+
+      let min = 0, max = 10;
+      let thoughtNum = lottery(min, max);
+      let thrownNum = parseInt(prompt('Porfavor, introduzca un número entre 0 y 10:'))
+      let i = 0;
+
+      let invalidData = Number.isNaN(thrownNum);
+      let outRange = thrownNum < min || thrownNum > max;
+
+      if (invalidData) i = 1;
+      else if (outRange) i = 2;
+      else if (thrownNum > thoughtNum) i = 3;
+      else if (thrownNum < thoughtNum) i = 4;
+
+      introduce(msg[i]);
+
+    </script>
+
+  </body>
+
+</html>

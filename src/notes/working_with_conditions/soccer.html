@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol</title>
+  </head>
+  <body>
+
+    <h1>PROGRAMA - CALCULAR PUNTOS DE UN EQUIPO DE FUTBOL</h1>
+
+    <script type="module">
+
+      import {introduce} from '../introduce.mjs';
+
+      let victories = parseInt(prompt("Informe la cantidad de victorias"));
+      let deadHeat = parseInt(prompt("Informe la cantidad de empates"));
+      let totalCoin = (victories * 3) + deadHeat;
+      let minCoin = 28;
+      let status = "";
+
+      introduce(`El total de puntos del equipo es: ${totalCoin}`);
+
+      if (totalCoin > minCoin) status = "mejor";
+      else if (totalCoin < minCoin) status = "peor";
+      else if(totalCoin == minCoin) status = "igual";
+
+      introduce(`El equipo esta <b>${status}</b> que el año pasado`);
+
+    </script>
+
+  </body>
+</html>

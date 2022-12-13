@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular IMC</title>
+  </head>
+
+  <body>
+    <h1>CALCULAR IMC</h1>
+
+
+    <script>
+
+      function newLine() {
+        document.write("<br>");
+        document.write("<br>");
+      }
+
+      function print(text) {
+        document.write(text);
+        newLine();
+      }
+
+      function calculateImc(weight, height) {
+
+        return weight / (height * height);
+
+      }
+
+      function calculateImcAverage(...imcs) {
+        let sum = 0;
+
+        for(imc of imcs) {
+          sum += imc;
+        }
+        
+        return sum/imcs.length;
+      }
+
+      let name = prompt("Introduzca su nombre:");
+      let reportedWeight = prompt(`${name} introduzca su peso porfavor:`);
+      let reportedHeight = prompt(`${name} introduzca su altura porfavor:`);
+
+      print(`${name} su imc calculado es: ${reportedWeight / (reportedHeight * reportedHeight)}`);
+
+    </script>
+  </body>
+
+</html>

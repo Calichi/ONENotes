@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular IMC</title>
+  </head>
+
+  <body>
+    <h1>CALCULAR IMC</h1>
+
+
+    <script type="module">
+
+      import {introduce} from '../introduce.mjs';
+
+      function calculateImc(weight, height) {
+
+        return weight / (height * height);
+
+      }
+
+      function calculateImcAverage(...imcs) {
+        let sum = 0;
+
+        for(imc of imcs) {
+          sum += imc;
+        }
+        
+        return sum/imcs.length;
+      }
+
+      let name = prompt("Introduzca su nombre:");
+      let reportedWeight = prompt(`${name} introduzca su peso porfavor:`);
+      let reportedHeight = prompt(`${name} introduzca su altura porfavor:`);
+      let imc = parseFloat(calculateImc(reportedWeight, reportedHeight));
+      let msg = "";
+
+      introduce(`${name} su imc calculado es: ${imc}`);
+
+      if (imc < 18.5) {
+        msg = "Imc abajo de lo recomendado";
+      } else if (imc >= 18.5 && imc < 25) {
+        msg = "IMC está dentro del intervalo normal";
+      } else if (imc >= 25 && imc < 30) {
+        msg = "IMC considerado como sobrepeso";
+      } else if (imc >= 30) {
+        msg = "IMC considerado como obesidad";
+      }
+
+      introduce(msg);
+
+    </script>
+  </body>
+
+</html>

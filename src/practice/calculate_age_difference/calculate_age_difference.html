@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de diferencia de edades</title>
+  </head>
+  <body>
+
+    <script>
+
+      function contains(member, group) {
+        for(internalMember of group) {
+          if(internalMember.toLowerCase() == member.toLowerCase()) return true;
+        }
+        return false;
+      }
+
+      function getAgeDifference(myAge, otherAge, relationship) {
+
+        let relationshipList = ["Amigo", "Hermano", "Novia"];
+
+        let difference = Math.abs(myAge - otherAge);
+        let conjunction = "un";
+        let fellow = "desconocido";
+        
+        if(contains(relationship, relationshipList)) {
+          conjunction = "mi";
+          fellow = relationship.toLowerCase();
+        }
+
+        document.write(`<big>La diferencia de edad entre <b>${conjunction}`);
+        document.write(` ${fellow}</b> y yo es de <b>${difference}</b> años</big>`);
+      }
+
+      getAgeDifference(26, 12, "Novia");
+
+    </script>
+
+  </body>
+</html>

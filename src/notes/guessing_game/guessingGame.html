@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de adivinación</title>
+  </head>
+
+  <body>
+
+    <h1>Juego de adivinación</h1>
+
+    <script type="module">
+
+      import {introduce} from '../introduce.mjs';
+
+      let thoughtNum = Math.round(Math.random() * 10);
+      let thrownNum = parseInt(prompt("Introduzca un número entre 0 - 10:"));
+      let msg = "";
+
+      if (thrownNum == thoughtNum) {
+        msg = "Usted acertó";
+      } else {
+        msg = `Usted erró, el número pensado era ${thoughtNum}`;
+      }
+
+      introduce(msg);
+
+    </script>
+
+  </body>
+
+</html>

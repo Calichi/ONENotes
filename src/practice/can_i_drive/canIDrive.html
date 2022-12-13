@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Será que puedo conducir?</title>
+  </head>
+
+
+  <body>
+
+    <script type="module">
+      import {introduce} from '../../modules/introduce.mjs';
+
+      /*
+        Determinar si una persona tiene la facultad de conducir
+
+        Criterios
+          - Debe ser mayor de edad
+          - Debe poseer una licencia de manejo
+      */
+
+      const msg = [
+        '¡Felicidades! <br> Usted cuenta con los requerimientos minimos para poder conducir',
+        'No cuenta con la edad minima requeridad para conducir',
+        'No cumple con los requerimientos minimos para conducir',
+        'Aunque cumple con la edad minima requerida para conducir, aún le hace falta una licencia de manejo',
+      ];
+
+      let age = parseInt(prompt("Porfavor, introduzca su edad:"));
+      let license = prompt("¿Cuenta con una licencia de manejo? Responda (S)i ó (N)o").toLowerCase();
+
+      let emptyData = Number.isNaN(age) && license == "";
+      let hasNotMinAge = age < 18;
+      let hasNotLicense = license != 's' && license != 'si';
+
+      let p = 0;
+
+      //Método por descartación
+      if (hasNotMinAge && hasNotLicense || emptyData) {p = 2;}
+      else if(!hasNotMinAge && hasNotLicense) {p = 3;}
+      else if (hasNotMinAge) {p = 1;}
+
+      introduce(msg[p]);
+
+    </script>
+
+  </body>
+
+</html>

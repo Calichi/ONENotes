@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+
+  <body>
+
+    <h1>PROGRAMA - Tabla de multiplicar</h1>
+
+    <script type="module">
+
+      import {introduce} from '../../modules/introduce.mjs'
+
+      function multiply(multiple) {
+        for(let count = 1; count < 11; count++) {
+          introduce(`${multiple} por ${count} es igual a ${multiple * count}`);
+        }
+      }
+
+      multiply(5);
+    </script>
+
+  </body>
+
+</html>

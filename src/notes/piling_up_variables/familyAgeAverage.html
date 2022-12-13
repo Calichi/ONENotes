@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+
+  <body>
+
+    <h1>PROGRAMA - CALCULAR EL PROMEDIO DE LAS EDADES DE UNA FAMILIA</h1>
+
+    <script type="module">
+
+      import {introduce} from '../../modules/introduce.mjs'
+
+      let memberNum = parseInt(prompt("Ingresa la cantidad de miembros de su familia"));
+      let totalAge = 0;
+      let average = 0;
+
+      for(let i = 0; i < memberNum; i++) {
+        let age = parseInt(prompt("Ingrese la edad del familiar"));
+        totalAge += age;
+      }
+
+      average = totalAge / memberNum;
+
+      introduce(`El promedio de edades de los miembros de su familia es ${average}`);
+    </script>
+
+  </body>
+
+</html>

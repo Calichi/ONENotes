@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<h3>¿Alcohol o gasolina?</h3>
+
+<script>
+
+  let capacitance = 40;
+
+  function estimateIntake(combustible, capacitance, totalTraveledDistance) {
+    let traveledDistanceByUnit = (totalTraveledDistance / capacitance).toFixed(2);
+    document.write(`<br>Consume un litro de <b>${combustible}</b>`);
+    document.write(` por cada ${traveledDistanceByUnit} km recorridos<br>`);
+  }
+
+  document.write(`<h5>Eficiencia de combustibles</h5>`);
+  document.write(`<br>Un automóvil con capacidad para <b>${capacitance}</b>`);
+  document.write(` litros de almacenamiento de combustible:<br>`)
+
+  estimateIntake("Gasolina", capacitance, 480);
+  estimateIntake("Alcohol", capacitance, 300);
+
+</script>

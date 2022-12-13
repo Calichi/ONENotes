@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+  </head>
+
+  <body>
+
+    <h1>PROGRAMA - AÑOS DE LOS MUNDIALES</h1>
+
+    <script type="module">
+
+      import {introduce} from '../../modules/introduce.mjs'
+
+      let year = 1930;
+      let limit = parseInt(prompt("Ingrese el año límite para calcular:"));
+
+      while(year <= limit) {
+        introduce(`Hubo un mundial de la FIFA en el año ${year}`);
+        year += 4;
+      }
+
+      introduce("fin");
+
+    </script>
+
+  </body>
+
+</html>

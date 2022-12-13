@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplicación</title>
+</head>
+  <body>
+
+    <script>
+
+      //Tablas de multiplicar del 1 al 10
+
+      //Definir la función multiplicar: Crea dinámicamente la tabla de un múltiplo
+      function multiply(multiple) {
+
+        /*
+        Instrucción >> for
+
+          Concepto||
+         ||||||||||
+
+          Realiza una acción repetitiva en función de si determinada condición resulta ser verdadera
+
+          Sintaxis||
+         ||||||||||
+
+          for(inicialización; condición; contador) {
+            cuerpo de instrucciones
+          }
+
+            Definición de sus componentes||
+           |||||||||||||||||||||||||||||||
+
+              * inicialización
+                ¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+                Se suele declarar e inicializar variables en este fragmento.
+                Nota: Este fragmento solo se ejecuta una vez durante el proceso de iteración.
+
+              * condición
+                ¨¨¨¨¨¨¨¨¨
+                Continene una expresión condicional, la cual es
+                evaluada (determinar si su valor es verdadero (true) o falso (false)).
+
+                Si el resultado es:
+
+                  - verdadero (true): el proceso de iteración continua.
+                  - falso (false): el proceso de iteración termina.
+
+              * contador
+                ¨¨¨¨¨¨¨¨
+                Se suele incrementar la variable definida en el fragmento >>inicialización<<
+                con el objetivo de registar cuantas veces se ha repetido el proceso de iteración
+
+              * cuerpo de instrucciones
+                ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+                Instrucciones que se ejecutan repetitivamente hasta que el proceso de iteración finalize
+
+
+          Proceso de iteración|| (Orden en el que se ejecutan los componentes (bloques) de la instrucción >> for)
+         ||||||||||||||||||||||
+
+          1.- Se ejecuta el bloque >>inicialización<<
+       :->2.- Se ejecuta el bloque >>condición<<
+       :
+       :      * Si se evalua como falsa (false): aquí finaliza el proceso de iteración.
+       :      * Si se evalua como verdadera (true): continua el proceso de iteración.
+       :  
+       :  3.- Se ejecuta el bloque de >>cuerpo de instrucciones<<
+       :  4.- Se ejecuta el bloque de >>contador<<
+       :--5.- Se repite el proceso a partir del paso 2
+                
+        */
+
+        for(let i = 1; i < 11; i++)
+          document.write(`${multiple} <b>por</b> ${i} <b>es igual a</b> ${multiple * i}<br>`);
+
+        document.write('<br>');
+      }
+
+      multiply(1);
+      multiply(2);
+      multiply(3);
+      multiply(4);
+      multiply(5);
+      multiply(6);
+      multiply(7);
+      multiply(8);
+      multiply(9);
+      multiply(10);
+
+    </script>
+
+  </body>
+</html>
