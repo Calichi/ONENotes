@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujando un Creeper</title>
+  </head>
+
+  <body>
+
+    <canvas id="main_canvas" width="600" height="400"></canvas>
+
+    <script>
+
+      const mainCanvas = document.querySelector('#main_canvas');
+      const canvasEditor = mainCanvas.getContext('2d');
+
+      const w = mainCanvas.width;
+      const h = mainCanvas.height;
+
+      canvasEditor.fillStyle = 'Black';
+      canvasEditor.fillRect(0, 0, w, h);
+
+      //Renderizado del Creeper
+
+      //Definición de medidas
+      const headWidth = 350, headHeight = 300;
+      const eyesWidth = 90, eyesHeight = 90;
+      const noseWidth = 70, noseHeight = 100;
+      const mouthWidth = 40, mouthHeight = 110;
+
+      //Localización de la cabeza del creeper: Actua como punto de referencia
+      const headX = (w - headWidth) / 2;
+      const headY = (h - headHeight) / 2;
+
+      //Desplazamiento entre los ojos y la parte superior de la cabeza
+      const offsetTop = headY + (0.2 * headHeight);
+
+      //Localización de la nariz: Actua como punto de referencia
+      const noseX = headX + ((headWidth - noseWidth) / 2);
+      const noseY = offsetTop + eyesHeight;
+      const noseR = noseX + noseWidth;
+
+      //Localización de los ojos 
+      const eyesY = offsetTop
+      const lEyeX = noseX - eyesWidth;
+      const rEyeX = noseR;
+
+      //Localización de la boca;
+      const mouthY = headY + (headHeight - mouthHeight);
+      const lsMouthX = noseX - mouthWidth;
+      const rsMouthX = noseR;
+
+      //Representación del creeper
+      
+      canvasEditor.fillStyle = 'white';
+      
+      //Representación de la cabeza
+      canvasEditor.fillRect(headX, headY, headWidth, headHeight);
+
+      canvasEditor.fillStyle = 'black';
+
+      //Representación de los ojos
+      canvasEditor.fillRect(lEyeX, eyesY, eyesWidth, eyesHeight);
+      canvasEditor.fillRect(rEyeX, eyesY, eyesWidth, eyesHeight);
+      
+      //Representación de la nariz
+      canvasEditor.fillRect(noseX, noseY, noseWidth, noseHeight);
+
+      //Representación de la boca
+      canvasEditor.fillRect(lsMouthX, mouthY, mouthWidth, mouthHeight);
+      canvasEditor.fillRect(rsMouthX, mouthY, mouthWidth, mouthHeight);
+
+    </script>
+
+  </body>
+
+</html>
