@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujando una escuadra</title>
+  </head>
+
+  <body>
+
+    <canvas id="canvas_view" width="600" height="400"></canvas>
+
+    <script>
+
+      const canvasView = document.getElementById('canvas_view');
+      const canvas = canvasView.getContext('2d');
+      const w = canvasView.width;
+      const h = canvasView.height;
+
+      canvas.fillStyle = "#000";
+      canvas.fillRect(0, 0, w, h);
+
+      const square = new Path2D();
+      const eB = 350, eH= 350;
+      const iB = 0.5 * eB;
+      const iH = 0.5 * eH;
+
+      //Números magicos
+      const o = 2/7;
+      const v = 5/7;
+
+      canvas.lineWidth = 2;
+      const lOffset = canvas.lineWidth / 2;
+      const eX = lOffset + ((w - eB)/2);
+      const eY = lOffset + ((h - eH)/2);
+      const eR = eX + eB - lOffset
+      const eD = eY + eH - lOffset;
+      const iX = eX + ((eB - iB) * o);
+      const iY = eY + ((eH - iH) * v);
+      const iR = iX + iB;
+      const iD = iY + iH - lOffset;
+
+      square.moveTo(eX, eY);
+      square.lineTo(eR, eD);
+      square.lineTo(eX, eD);
+      square.closePath();
+
+      square.moveTo(iX, iY);
+      square.lineTo(iR, iD);
+      square.lineTo(iX, iD);
+      square.closePath();
+      
+      canvas.fillStyle = 'green';
+      canvas.fill(square, 'evenodd');
+      canvas.strokeStyle = 'springgreen';
+      canvas.stroke(square);
+
+    </script>
+
+  </body>
+
+</html>
