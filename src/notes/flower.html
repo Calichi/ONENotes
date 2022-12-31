@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script type="module">
+      import { drawCircle } from '../modules/canvatools.mjs';
+
+      let htmlCanvas = document.getElementById('canvas');
+      let canvas = htmlCanvas.getContext('2d');
+      let w = htmlCanvas.clientWidth;
+      let h = htmlCanvas.clientHeight;
+
+      let xc = htmlCanvas.clientWidth / 2;
+      let yc = htmlCanvas.clientHeight / 2;
+      
+      let diam = h / 3;
+      let rad = diam / 2;
+
+      let space = diam * -0.3;
+      let compression = diam * (1 - 1);
+      let dis = (diam + space) - compression;
+      let dis2 = dis * 0.8;
+      let r = (rad - space) - (compression / 2);
+      let r2 = r * 0.8;
+      let pet = '#fa9a'
+      let petTwo = '#fa8a'
+
+      let left = xc - dis, right = xc + dis;
+      let top = yc - dis, bottom = yc + dis;
+
+      canvas.fillStyle = '#fff';
+      canvas.fillRect(0, 0, w, h);
+
+      drawCircle(xc - dis2, yc - dis2, r2, petTwo, canvas);
+      drawCircle(xc - dis2, yc + dis2, r2, petTwo, canvas);
+      drawCircle(xc + dis2, yc - dis2, r2, petTwo, canvas);
+      drawCircle(xc + dis2, yc + dis2, r2, petTwo, canvas);
+
+      drawCircle(left, yc, r, pet, canvas);
+      drawCircle(xc, bottom, r, pet, canvas);
+      drawCircle(right, yc, r, pet, canvas);
+      drawCircle(xc, top, r, pet, canvas);
+
+      drawCircle(xc, yc, r2, '#f665', canvas);
+
+    </script>
+
+  </body>
+</html>
