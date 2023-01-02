@@ -5,7 +5,7 @@ function getCanvasById(id) {
   return htmlElement.getContext('2d');
 }
 
-function drawCircle(x, y, r, fill, canvas) {
+function fillCircle(x, y, r, fill, canvas) {
   canvas.fillStyle = fill;
   canvas.beginPath();
   canvas.arc(x, y, r, 0, 2 * Math.PI);
@@ -43,7 +43,7 @@ function drawConnection(x1, x2, x3, y1, y2, stroke, canvas) {
   canvas.stroke();
 }
 
-export { getCanvasById, drawCircle, drawRectangle,
+export { getCanvasById, fillCircle, drawRectangle,
          fillRectangle,
          fillText, measureText,
          drawConnection };
