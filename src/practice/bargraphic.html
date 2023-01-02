@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+    <canvas width="600" height="400" id="canvas"></canvas>
+
+    <script type="module">
+
+      import { fillRectangle,
+               drawRectangle,
+               fillText, measureText,
+               drawConnection } from '../modules/canvatools.mjs';
+
+      let htmlCanvas = document.getElementById('canvas');
+      let canvas = htmlCanvas.getContext('2d');
+      let w = htmlCanvas.clientWidth, h = htmlCanvas.clientHeight;
+
+      //Pintar el fondo del canvas
+      fillRectangle(0, 0, w, h, '#022', canvas);
+
+      //Datos del gráfico
+      let s2009 = [6, 47, 41, 3, 3];
+      let s2019 = [81, 9, 3, 3, 4];
+      let colors = ['blue', 'green', 'yellow', 'red', 'gray'];
+      let names = ['Chrome', 'Firefox', 'IE/Edge', 'Safari', 'Otros'];
+
+      //Representación del gráfico
+      let mrgV = 0.02 * h;
+      let sep = 0.45 * w;
+      let barW = 0.15 * w;
+      let wholeBarH = (h * 0.8) - mrgV;
+      let barOY = h - (wholeBarH + mrgV);
+      let oneBarX = ((w - sep) / 2) - barW;
+      let twoBarX = oneBarX + barW + sep;
+
+      let fsz = 15; // Tamaño del encabezado
+      let fsz2 = 12;
+      let hs = (h * 0.01); // Separación entre el encabezado y la barra
+      let bhy = barOY - (hs + fsz);
+      let font = `${fsz}px Georgia`;
+      let font2 = `${fsz2}px Georgia`
+
+      function drawBar(x, statistics, colors, header, invert) {
+
+        let barR = x + barW;
+        let pSegH = wholeBarH / names.length; // Proportional segment height
+        let pSegHHalf = pSegH / 2; // Proportional segment height half
+        let conn_space = sep * 0.12;
+        let conn_offset = sep * 0.05;
+
+        let connXB = x + barW + (0.02 * sep);
+        let connXBN = x + barW + conn_space;
+        let connXM = connXB + conn_offset;
+
+        if(invert) {
+          connXB = x - (0.02 * sep);
+          connXM = connXB - conn_offset;
+          connXBN = x - conn_space;
+        }
+
+        fillText(x, bhy, header, font, '#fff', canvas);
+
+        let segY, pSegY; segY = pSegY = barOY;
+
+        for(let i = 0; i < statistics.length; i++) {
+
+          let percent = statistics[i];
+          let perTxt = `${percent}%`;
+          let perTxtW = measureText(perTxt, font2, canvas).width; // Text width
+          
+          let txtW = measureText(names[i], font, canvas).width; // Text width
+          let segH = wholeBarH * (percent / 100); // Segment height
+          let segHHalf = segH / 2; // Segment height half
+          let connYN = pSegY + pSegHHalf;
+          let connYB = segY + segHHalf;
+
+          let conn_w = (sep - (txtW + (conn_space * 2))) / 2;
+          let nameX = invert ? connXBN - conn_w : connXBN + conn_w;
+          let connXE = invert ? nameX + conn_space : nameX - conn_space;
+
+          if(!invert)
+            fillText(nameX, connYN, names[i], font, colors[i], canvas);
+
+          fillRectangle(x, segY, barW, segH, colors[i], canvas);
+          drawConnection(connXB, connXM, connXE, connYN, connYB, colors[i], canvas);
+
+          let perTxtX = invert ? connXE - ((conn_space/4) + perTxtW) : connXE + (conn_space/4);
+
+          fillText(perTxtX, connYN, perTxt, font2, 'white', canvas);
+
+          segY += segH;
+          pSegY += pSegH;
+
+          if(invert) connXM -= conn_offset;
+          else connXM += conn_offset;
+        }
+      }
+
+      drawBar(oneBarX, s2009, colors, "2009", false);
+      drawBar(twoBarX, s2019, colors, "2019", true);
+      
+      drawRectangle(oneBarX, barOY, barW, wholeBarH, '#000', canvas);
+      drawRectangle(twoBarX, barOY, barW, wholeBarH, '#000', canvas);
+
+    </script>
+
+  </body>
+
+</html>
