@@ -24,7 +24,7 @@ function load-template ($name) {
   foreach($path in $templates) {
     $_name = $IOPath::GetFileName($path);
     if($_name.ToLower() -eq $name.ToLower()) {
-      clone-files -path $path -newPath [Environment]::CurrentDirectory;
+      clone-files -path $path -newPath (Get-Location).ProviderPath;
       break;
     }
   }
