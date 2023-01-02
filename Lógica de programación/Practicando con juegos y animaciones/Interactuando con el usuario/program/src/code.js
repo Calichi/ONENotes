@@ -1,10 +1,14 @@
-let htmlCanvas = document.getElementById('canvas');
-let canvas = htmlCanvas.getContext('2d');
-let w = htmlCanvas.clientWidth;
-let h = htmlCanvas.clientHeight;
+"use strict";
 
-canvas.fillStyle = '#012';
-canvas.fillRect(0, 0, w, h);
+import { fillRectangle } from '../modules/canvatools/canvatools.mjs';
+
+const htmlCanvas = document.getElementById('canvas');
+const canvas = htmlCanvas.getContext('2d');
+
+const h = htmlCanvas.clientHeight;
+const w = htmlCanvas.clientWidth;
+
+fillRectangle(0, 0, w, h, '#122', canvas);
 
 function showClickInfo(event) {
   console.log(event);
