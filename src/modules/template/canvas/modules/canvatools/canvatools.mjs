@@ -5,19 +5,19 @@ function getCanvasById(id) {
   return htmlElement.getContext('2d');
 }
 
-function drawCircle(x, y, r, fill, canvas) {
+function paintCircle(x, y, r, fill, canvas) {
   canvas.fillStyle = fill;
   canvas.beginPath();
   canvas.arc(x, y, r, 0, 2 * Math.PI);
   canvas.fill();
 }
 
-function fillRectangle(x, y, w, h, fill, canvas) {
+function paintRectangle(x, y, w, h, fill, canvas) {
   canvas.fillStyle = fill;
   canvas.fillRect(x, y, w, h);
 }
 
-function drawRectangle(x, y, w, h, stroke, canvas) {
+function strokeRectangle(x, y, w, h, stroke, canvas) {
   canvas.strokeStyle = stroke;
   canvas.strokeRect(x, y, w, h);
 }
@@ -43,7 +43,7 @@ function drawConnection(x1, x2, x3, y1, y2, stroke, canvas) {
   canvas.stroke();
 }
 
-export { getCanvasById, drawCircle, drawRectangle,
-         fillRectangle,
+export { getCanvasById, paintCircle, strokeRectangle,
+         paintRectangle,
          fillText, measureText,
          drawConnection };
