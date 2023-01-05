@@ -4,7 +4,7 @@ import { Size } from './Size.mjs';
 //import { Point } from './Point.mjs'
 //import { Rect } from './Rect.mjs'
 
-exports = class Drawing {
+class Drawing {
   //Miembros estaticos
   static #_HTML_CANVAS;
   static #_CANVAS;
@@ -37,3 +37,5 @@ exports = class Drawing {
   set region(value) {this.#_region = value;}
 
 }
+
+export { Drawing };

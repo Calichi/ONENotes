@@ -2,7 +2,7 @@
 
 import { Size } from './Size.mjs'
 
-exports = class Point {
+class Point {
   //Miembros estaticos
   static get empty() { return new Point(0, 0); }
 
@@ -34,3 +34,5 @@ exports = class Point {
     return this.equal(Point.empty);
   }
 }
+
+export { Point };
