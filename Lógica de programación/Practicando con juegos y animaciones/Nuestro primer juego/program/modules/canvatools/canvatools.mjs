@@ -22,7 +22,7 @@ function strokeRectangle(x, y, w, h, stroke, canvas) {
   canvas.strokeRect(x, y, w, h);
 }
 
-function fillText(x, y, text, font, fill, canvas) {
+function paintText(x, y, text, font, fill, canvas) {
   canvas.font = font;
   canvas.fillStyle = fill;
   canvas.fillText(text, x, y);
@@ -45,5 +45,5 @@ function drawConnection(x1, x2, x3, y1, y2, stroke, canvas) {
 
 export { getCanvasById, paintCircle, strokeRectangle,
          paintRectangle,
-         fillText, measureText,
+         paintText, measureText,
          drawConnection };
