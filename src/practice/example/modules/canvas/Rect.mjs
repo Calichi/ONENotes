@@ -3,7 +3,7 @@
 import { Size } from './Size.mjs'
 import { Point } from './Point.mjs';
 
-exports = class Rect {
+class Rect {
   //Miembros estaticos
   static get empty() { return new Rect(Point.empty, Size.empty); }
   //Miembros de instancia
@@ -36,3 +36,5 @@ exports = class Rect {
     return this.equal(Rect.empty);
   }
 }
+
+export { Rect };

@@ -1,13 +1,13 @@
 'use strict';
 
-exports = class Size {
+class Size {
   //Miembros estaticos
   static get empty() { return new Size(0, 0); }
   //Miembros de instancia
   #_height;
   #_width;
 
-  constructor(height, width) {
+  constructor(width, height) {
     this.#_height = height;
     this.#_width = width;
   }
@@ -25,3 +25,5 @@ exports = class Size {
     return this.equal(Size.empty);
   }
 }
+
+export { Size };

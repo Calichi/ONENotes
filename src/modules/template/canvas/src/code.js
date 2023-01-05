@@ -1,6 +1,7 @@
 "use strict";
 
 import { paintRectangle } from '../modules/canvatools/canvatools.mjs';
+import { Size, Point, Rect, Drawing } from '../modules/canvas/Canvas.mjs';
 
 const htmlCanvas = document.getElementById('canvas');
 const canvas = htmlCanvas.getContext('2d');
