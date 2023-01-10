@@ -1,13 +1,13 @@
 'use strict'
 
-import { Drawing, DrawingGroup, Rect, Size } from './Canvas.mjs'
+import { Drawing, DrawingGroup, Rect, Size, Point } from './Canvas.mjs'
 
 class Screen extends DrawingGroup {
-  #_SIZE;
-  #_DEFAULT;
+  static #_SIZE;
+  static #_DEFAULT;
 
-  get SIZE() { return this.#_SIZE};
-  get DEFAULT() { return this.#_DEFAULT; }
+  static get SIZE() { return this.#_SIZE};
+  static get DEFAULT() { return this.#_DEFAULT; }
 
   static LoadCanvas(id) {
     super.LoadCanvas(id);
@@ -17,6 +17,7 @@ class Screen extends DrawingGroup {
   }
 
   constructor() {
+    super();
     this.region = new Rect(Point.empty, Screen.SIZE);
     this.pigment = '#024';
   }

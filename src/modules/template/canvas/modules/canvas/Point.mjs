@@ -33,6 +33,12 @@ class Point {
   isEmpty() {
     return this.equal(Point.empty);
   }
+
+  clone() {
+    return new Point(this.x, this.y);
+  }
+
+  toSize() { return new Size(this.x, this.y); }
 }
 
 export { Point };

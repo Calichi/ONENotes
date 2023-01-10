@@ -6,6 +6,9 @@ import { Point } from './Point.mjs';
 class Rect {
   //Miembros estaticos
   static get empty() { return new Rect(Point.empty, Size.empty); }
+  static create(x, y, w, h) {
+    return new Rect(new Point(x, y), new Size(w, h));
+  }
   //Miembros de instancia
   #_point
   #_size
@@ -16,7 +19,9 @@ class Rect {
   }
 
   get point() { return this.#_point; }
+  set point(value) { this.#_point = value; }
   get size() { return this.#_size; }
+  set size(value) { this.#_size = value; }
 
   get left() { return this.#_point.x; }
   get top() { return this.#_point.y; }

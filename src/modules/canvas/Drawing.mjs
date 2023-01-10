@@ -8,20 +8,18 @@ class Drawing {
   //Miembros estaticos
   static #_HTML_CANVAS;
   static #_CANVAS;
-  static #_SCREEN_SIZE;
 
   static get CANVAS() { return this.#_CANVAS; }
   static get HTML_CANVAS() { return this.#_HTML_CANVAS; }
-  static get SCREEN_SIZE() { return this.#_SCREEN_SIZE; }
   static set HTML_CANVAS(value) {
     this.#_HTML_CANVAS = value;
-    this.#_SCREEN_SIZE = new Size(value.clientWidth, value.clientHeight);
     this.#_CANVAS = value.getContext('2d');
   }
 
   static LoadCanvas(id) {
     this.HTML_CANVAS = document.getElementById(id);
   }
+
   //Miembros de instancia
   #_region;
   #_pigment;

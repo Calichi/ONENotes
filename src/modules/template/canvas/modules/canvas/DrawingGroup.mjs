@@ -9,6 +9,12 @@ class DrawingGroup extends Drawing {
     super();
   }
 
+  get items() { return this.#_items; }
+
+  noItems() {
+    return this.#_items == undefined || this.#_items == null || this.#_items.length == 0;
+  }
+
   addItem(drawing) {
     this.#_items.push(drawing);
     if(this.isVisible()) drawing.paint();

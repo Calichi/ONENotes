@@ -1,18 +1,35 @@
 "use strict";
 
-import { paintRectangle } from '../modules/canvatools/canvatools.mjs';
-import { Size, Point, Rect, Drawing, Screen } from '../modules/canvas/Canvas.mjs';
+import { Screen, Circle, StackPanel } from '../modules/canvas/Canvas.mjs';
 
-Drawing.LoadCanvas('canvas');
-Screen.DEFAULT.paint();
+Screen.LoadCanvas('canvas');
+const screen = Screen.DEFAULT;
+const pallete = new StackPanel();
+const one = new Circle();
+const two = new Circle();
+const three = new Circle();
+const four = new Circle();
+const five = new Circle();
+const six = new Circle();
+const seven = new Circle();
+const eight = new Circle();
 
-/*const htmlCanvas = document.getElementById('canvas');
-const canvas = htmlCanvas.getContext('2d');
+two.pigment = '#00f';
+three.pigment = '#0f0';
 
-const h = htmlCanvas.clientHeight;
-const w = htmlCanvas.clientWidth;
-const mbg = '#024';
+pallete.limit = Screen.SIZE.width * 0.5;
+pallete.addItem(one);
+pallete.addItem(two);
+pallete.addItem(three);
+pallete.addItem(four);
+pallete.addItem(five);
+pallete.addItem(six);
+pallete.addItem(seven);
+pallete.addItem(eight);
 
-paintRectangle(0, 0, w, h, mbg, canvas);*/
+screen.addItem(pallete);
 
-// Código del programa
+function updateFrame() {
+  screen.paint();
+}
+screen.paint();
