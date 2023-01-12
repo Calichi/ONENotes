@@ -1,0 +1,7 @@
+.center-text {
+  text-align: center;
+}
+
+body > p:nth-child(3) {
+  font-size: 20px;
+}
