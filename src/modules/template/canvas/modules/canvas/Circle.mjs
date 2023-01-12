@@ -5,7 +5,7 @@ import { Drawing, Rect } from './Canvas.mjs';
 class Circle extends Drawing {
   constructor() {
     super();
-    this.region = Rect.create(0, 0, 40, 40);
+    this.region = Rect.create(0, 0, 20, 20);
     this.pigment = '#f00';
   }
   
@@ -21,6 +21,10 @@ class Circle extends Drawing {
     canvas.beginPath();
     canvas.arc(pos.x + rad, pos.y + rad, rad, 0, 2 * Math.PI);
     canvas.fill();
+  }
+
+  loading() {
+    super.loading();
   }
 }
 

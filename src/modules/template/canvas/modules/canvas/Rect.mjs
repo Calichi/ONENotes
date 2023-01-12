@@ -1,7 +1,6 @@
 'use strict'
 
-import { Size } from './Size.mjs'
-import { Point } from './Point.mjs';
+import { Point, Size } from './canvas.mjs';
 
 class Rect {
   //Miembros estaticos
@@ -31,6 +30,20 @@ class Rect {
   isInside(point) {
     return point.x > this.left && point.x < this.right &&
            point.y > this.top && point.y < this.bottom;
+  }
+
+  applyMargin(margin) {
+    this.point.x += margin.left;
+    this.point.y += margin.top;
+    this.size.width -= margin.horizontal;
+    this.size.height -= margin.vertical;
+  }
+
+  expand(f) {
+    const f2 = f * 2;
+    const p = new Point(this.point.x - f, this.point.y - f);
+    const s = new Size(this.size.width + f2, this.size.height + f2);
+    return new Rect(p, s);
   }
 
   equal(rect) {

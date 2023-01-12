@@ -64,9 +64,10 @@ class StackPanel extends DrawingGroup {
   reorganize() {
     if(this.noItems()) return; // Si no hay elementos, regresar
 
+    this.#initLayout();
     // Iterar elementos
     for(const item of this.items) {
-      this.placeItem(item);
+      this.#placeItem(item);
     }
   }
 
@@ -86,9 +87,9 @@ class StackPanel extends DrawingGroup {
   paint() {
     if(!this.isVisible()) return;
 
-    const canvas = Drawing.CANVAS;
-    canvas.fillStyle = this.pigment;
-    canvas.fillRect(this.x, this.y, this.width, this.height);
+    /*const canvas = Drawing.CANVAS;
+    canvas.fillStyle = '#5555';
+    canvas.fillRect(this.x, this.y, this.width, this.height);*/
 
     super.paint();
   }

@@ -16,6 +16,7 @@ class DrawingGroup extends Drawing {
   }
 
   addItem(drawing) {
+    drawing.container = this;
     this.#_items.push(drawing);
     if(this.isVisible()) drawing.paint();
   }
@@ -30,6 +31,50 @@ class DrawingGroup extends Drawing {
     for(let item of this.#_items) {
       item.paint();
     }
+  }
+
+  loading() {
+    super.loading();
+
+    if(this.noItems()) return;
+
+    for(let item of this.#_items) {
+      item.loading();
+    }
+  }
+
+  resolveClick(point) {
+    if(this.region.isInside(point)) {
+      return this.deliverClick(point);
+    }
+    return false;
+  }
+
+  deliverClick(point) {
+    if(!this.noItems()) {
+      for(const item of this.#_items) {
+        if(item.resolveClick(point)) return true;
+      }
+    }
+
+    return this.click(point);
+  }
+
+  resolveMouseMove(point) {
+    if(this.region.isInside(point)) {
+      return this.deliverMouseMove(point);
+    }
+    return false;
+  }
+
+  deliverMouseMove(point) {
+    if(!this.noItems()) {
+      for(const item of this.#_items) {
+        if(item.resolveMouseMove(point)) return true;
+      }
+    }
+
+    return this.mouseMove(point);
   }
 }
 
