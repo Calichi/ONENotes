@@ -1,7 +1,3 @@
-body {
-  background: #ccc;
-}
-
 em strong {
   color: #f00;
 }
@@ -18,6 +14,14 @@ em strong {
   font-size: 20px;
 }
 
+.differentials > h2:nth-child(1) {
+  text-align: center;
+}
+
 .items {
   font-style: italic;
+}
+
+.main {
+  background-color: #ccc;
 }
