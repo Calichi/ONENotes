@@ -2,6 +2,12 @@ header {
   background-color: #bbb;
 }
 
+nav {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
 nav > a {
   text-transform: uppercase;
   color: #000;
