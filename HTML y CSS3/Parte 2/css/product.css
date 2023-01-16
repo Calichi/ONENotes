@@ -1,11 +1,18 @@
 header {
   background-color: #bbb;
+  padding: 20px 0;
 }
 
 nav {
   position: absolute;
-  top: 0px;
+  top: 50%;
   right: 0px;
+}
+
+.header-content-guide {
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
 }
 
 nav > a {
