@@ -17,3 +17,7 @@ em strong {
 #mission {
   font-size: 20px;
 }
+
+.items {
+  font-style: italic;
+}
