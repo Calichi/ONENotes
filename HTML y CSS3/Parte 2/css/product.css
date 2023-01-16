@@ -31,7 +31,6 @@ nav > a {
 }
 
 .products li{
-  position: relative;
   display: inline-block;
   text-align: center;
   border: solid 1px #004;
@@ -49,9 +48,7 @@ nav > a {
 }
 
 .product-price {
-  position: relative;
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
-  bottom: 0;
 }
