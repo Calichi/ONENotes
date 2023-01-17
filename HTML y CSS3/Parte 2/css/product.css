@@ -38,7 +38,7 @@ nav > a:hover {
 .products li{
   display: inline-block;
   text-align: center;
-  border: 1px solid #004;
+  border: 2px solid #004;
   width: 30%;
   vertical-align: top;
   margin: 0 1.5%;
@@ -47,9 +47,21 @@ nav > a:hover {
   border-radius: 10px;
 }
 
+.products li:hover {
+  border-color: #884;
+}
+
+.products li:active {
+  border-color: #0b4;
+}
+
 .products h2 {
   font-size: 30px;
   font-weight: bold;
+}
+
+.products li:hover > h2 {
+  font-size: 2em;
 }
 
 .product-description {
