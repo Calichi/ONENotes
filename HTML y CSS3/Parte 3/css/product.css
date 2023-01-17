@@ -1,0 +1,87 @@
+header {
+  background-color: #bbb;
+  padding: 20px 0;
+}
+
+nav {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+}
+
+.header-content-guide {
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+}
+
+nav > a {
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 0 0 0 15px;
+}
+
+nav > a:hover {
+  color: #884;
+  text-decoration: underline;
+}
+
+.products {
+  width: 75%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.products li{
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #004;
+  width: 30%;
+  vertical-align: top;
+  margin: 0 1.5%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.products li:hover {
+  border-color: #884;
+}
+
+.products li:active {
+  border-color: #0b4;
+}
+
+.products h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.products li:hover > h2 {
+  font-size: 2em;
+}
+
+.product-description {
+  font-size: 18px;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+footer {
+  background: url(../assets/img/bg.jpg);
+  text-align: center;
+  padding: 40px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 0.8em;
+  margin: 20px;
+}
