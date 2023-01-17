@@ -39,28 +39,36 @@
         <!--  Inicio: Area de controles -->
 
         <label for="full_name">Nombre completo</label>
-        <input type="text" id="full_name">
+        <input type="text" id="full_name" class="text-input">
 
         <label for="email">Correo electrónico</label>
-        <input type="text" id="email">
+        <input type="text" id="email" class="text-input">
 
         <label for="phone">Teléfono</label>
-        <input type="text" id="phone">
+        <input type="text" id="phone" class="text-input">
 
         <label for="message">Mensaje</label>
-        <textarea cols="70" rows="10" id="message"></textarea>
+        <textarea cols="70" rows="10" id="message" class="text-input"></textarea>
 
         <fieldset>
-          <caption>¿Cómo le gustaría que lo contactemos?</caption>
+          <legend>¿Cómo le gustaría que lo contactemos?</legend>
 
-          <label for="email-rad">Correo electrónico</label>
-          <input type="radio" name="contact" id="email-rad" value="email">
+          <label for="email-rad">
+            <input type="radio" name="contact" id="email-rad" value="email">
+            Correo electrónico
+          </label>
 
-          <label for="phone-rad">Correo electrónico</label>
+          <label for="phone-rad">
           <input type="radio" name="contact" id="phone-rad" value="phone">
+          Teléfono
+          </label>
+          
 
-          <label for="whatsapp-rad">Correo electrónico</label>
+          <label for="whatsapp-rad">
           <input type="radio" name="contact" id="whatsapp-rad" value="whatsapp">
+          Whatsapp
+          </label>
+          
         </fieldset>
 
         <label>
