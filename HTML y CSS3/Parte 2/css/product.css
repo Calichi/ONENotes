@@ -33,7 +33,7 @@ nav > a {
 .products li{
   display: inline-block;
   text-align: center;
-  border: solid 1px #004;
+  border: 1px solid #004;
   width: 30%;
   vertical-align: top;
   margin: 0 1.5%;
