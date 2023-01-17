@@ -24,6 +24,11 @@ nav > a {
   margin: 0 0 0 15px;
 }
 
+nav > a:hover {
+  color: #884;
+  text-decoration: underline;
+}
+
 .products {
   width: 75%;
   margin: 0 auto;
