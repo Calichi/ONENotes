@@ -20,6 +20,7 @@ form label, form legend {
   width: 50%;
 }
 
-checkbox {
+
+input[type=checkbox] {
   margin: 20px 0;
 }
