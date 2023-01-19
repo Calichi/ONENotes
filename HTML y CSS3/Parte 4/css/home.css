@@ -2,11 +2,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-main {
-  width: 940px;
-  margin: 0 auto;
-}
-
 .banner {
   width: 100%;
 }
@@ -20,10 +15,10 @@ main {
   font-weight: bold;
 }
 
-/*.main {
-  background-color: #ccc;
+.main {
+  background-color: #0af;
   padding: 20px;
-}*/
+}
 
 .main-title {
   text-align: center;
@@ -52,6 +47,7 @@ main {
 
 .diff {
   padding: 30px;
+  background: #06a;
 }
 
 .diff-content {
@@ -71,11 +67,17 @@ main {
 
 .map {
   padding: 3em 0;
+  background: linear-gradient(#0af, #06a);
 }
 
 .map p {
   margin: 0 0 2em;
   text-align: center;
+}
+
+.map-content {
+  width: 940px;
+  margin: 0 auto;
 }
 
 .video {
