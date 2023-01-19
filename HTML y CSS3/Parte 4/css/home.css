@@ -2,6 +2,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+main {
+  width: 940px;
+  margin: 0 auto;
+}
+
 .banner {
   width: 100%;
 }
@@ -10,10 +15,10 @@ body {
   font-style: italic;
 }
 
-.main {
+/*.main {
   background-color: #ccc;
   padding: 20px;
-}
+}*/
 
 .main-title {
   text-align: center;
@@ -53,4 +58,13 @@ body {
   vertical-align: top;
   width: 20%;
   margin-right: 15%;
+}
+
+.map {
+  padding: 3em 0;
+}
+
+.map p {
+  margin: 0 0 2em;
+  text-align: center;
 }
