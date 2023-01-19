@@ -15,6 +15,10 @@ body {
   font-weight: bold;
 }
 
+.items:before {
+  content: "\2700";
+}
+
 .main {
   background-color: #0af;
   padding: 20px;
@@ -25,6 +29,10 @@ body {
   font-size: 2em;
   margin: 0 0 1em;
   clear: left;
+}
+
+.main-title:first-letter {
+  font-weight: bold;
 }
 
 .utensils {
