@@ -16,6 +16,10 @@ main {
   line-height: 1.5;
 }
 
+.items:first-child {
+  font-weight: bold;
+}
+
 /*.main {
   background-color: #ccc;
   padding: 20px;
