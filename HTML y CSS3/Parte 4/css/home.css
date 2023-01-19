@@ -73,6 +73,7 @@ body {
   width: 60%;
   opacity: 0.5;
   transition: 0.5s opacity;
+  box-shadow: 10px 10px 15px #038;
 }
 
 .diff-img:hover {
