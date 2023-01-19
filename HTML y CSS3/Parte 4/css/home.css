@@ -1,21 +1,5 @@
-em strong {
-  color: #f00;
-}
-
-.main-title {
-  margin-left: 30px;
-}
-
-.center-text {
-  text-align: center;
-}
-
-#banner {
+.banner {
   width: 100%;
-}
-
-#mission {
-  font-size: 20px;
 }
 
 .items {
@@ -27,12 +11,30 @@ em strong {
   padding: 20px;
 }
 
+.main-title {
+  text-align: center;
+  font-size: 2em;
+  margin: 0 0 1em;
+}
+
+.main > p {
+  margin: 0 0 1em;
+}
+
+.main strong {
+  font-weight: bold;
+}
+
+.main em {
+  font-style: italic;
+}
+
 .diff {
   padding: 30px;
 }
 
 .diff-img {
-  width: 50%;
+  width: 60%;
 }
 
 .diff > ul {
