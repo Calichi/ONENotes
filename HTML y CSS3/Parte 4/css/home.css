@@ -71,6 +71,12 @@ body {
 
 .diff-img {
   width: 60%;
+  opacity: 0.5;
+  transition: 0.5s opacity;
+}
+
+.diff-img:hover {
+  opacity: 1;
 }
 
 .map {
