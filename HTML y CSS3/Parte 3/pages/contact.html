@@ -39,16 +39,16 @@
         <!--  Inicio: Area de controles -->
 
         <label for="full_name">Nombre completo</label>
-        <input type="text" id="full_name" class="text-input">
+        <input type="text" id="full_name" class="text-input" required>
 
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" class="text-input">
+        <input type="email" id="email" class="text-input" required placeholder="email@dominio.com">
 
         <label for="phone">Teléfono</label>
-        <input type="tel" id="phone" class="text-input">
+        <input type="tel" id="phone" class="text-input" required placeholder="(XX) XXXX XXXX">
 
         <label for="message">Mensaje</label>
-        <textarea cols="70" rows="10" id="message" class="text-input"></textarea>
+        <textarea cols="70" rows="10" id="message" class="text-input" required></textarea>
 
         <fieldset>
           <legend>¿Cómo le gustaría que lo contactemos?</legend>
@@ -65,7 +65,7 @@
           
 
           <label for="whatsapp-rad">
-          <input type="radio" name="contact" id="whatsapp-rad" value="whatsapp">
+          <input type="radio" name="contact" id="whatsapp-rad" value="whatsapp" checked>
           Whatsapp
           </label>
           
@@ -81,7 +81,7 @@
         </fieldset>
 
         <label>
-          <input type="checkbox">
+          <input type="checkbox" checked>
           ¿Le gustaría recibir novedades de la Barbería Alura?
         </label>
 
