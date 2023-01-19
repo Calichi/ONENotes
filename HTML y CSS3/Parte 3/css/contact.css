@@ -33,10 +33,11 @@ input[type=checkbox] {
   background: #f77;
   border: none;
   border-radius: 5px;
-  transition: 1s background;
+  transition: 0.5s all;
   cursor: pointer;
 }
 
 .send:hover {
   background: #f44;
+  transform: scale(1.1);
 }
