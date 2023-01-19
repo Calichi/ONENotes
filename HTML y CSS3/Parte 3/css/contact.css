@@ -41,3 +41,19 @@ input[type=checkbox] {
   background: #f44;
   transform: scale(1.1);
 }
+
+table {
+  margin: 40px;
+}
+
+thead {
+  background: #555;
+  color: #fff;
+  font-weight: bold;
+}
+
+td, th {
+  border: 1px solid #333;
+  padding: 10px 20px
+  ;
+}
