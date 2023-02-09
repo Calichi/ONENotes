@@ -2,20 +2,15 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        double __double = 230.89;
-        int __integer = (int)__double; //Cast
-        long __long = 12L;
-        short __short = 13555;
-        byte __byte = 127;
-        float __float = 2.5F;
+        char _char = 'a';
+        char _char2 = (char)(_char + 1);
+        String word = "Alura cursos online";
 
-        //Este método imprime en consola
-        print(__double);
-        print(__integer);
-        print(__long);
-        print(__short);
-        print(__byte);
-        print(__float);
+        _char = 65 + 1;
+        word += " 2023";
+
+        print(_char2);
+        print(word);
 
     }
 
