@@ -2,18 +2,18 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        int number1 = 5;
-        int number2 = 9;
+        int age = 17;
+        int quantity = 2;
 
-        print(number2);
-
-        number2 = number1;
-
-        print(number2);
-
-        number1 = 88;
-
-        print(number2);
+        if (age >= 18) {
+            print("Usted puede entrar");
+            print("Bienvenido");
+        } else {
+            if (quantity >= 2) {
+                print("Usted es menor de edad pero tiene permitido entrar");
+            }
+            print("Usted no tiene permitido entrar");
+        }
 
     }
 
