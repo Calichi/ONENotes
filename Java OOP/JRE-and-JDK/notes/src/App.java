@@ -2,11 +2,16 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        int count = 0;
+        //int count = 0;
         int sum = 0;
 
-        while(count < 10) {
+        /*while(count < 10) {
             count++;
+            sum += count;
+            print(count);
+        }*/
+
+        for(int count = 0; count <= 10; ++count) {
             sum += count;
             print(count);
         }
