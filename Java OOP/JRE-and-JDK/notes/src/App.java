@@ -2,9 +2,10 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        for(int multiplicand = 1; multiplicand <= 10; multiplicand++) {
-            for(int multiplier = 1; multiplier <= 10; multiplier++) {
-                print(multiplicand, multiplier);
+        for(int row = 1; row <= 10; row++) {
+            for(int column = 1; column < row; column++) {
+
+                System.out.print("* ");
             }
             System.out.println();
         }
