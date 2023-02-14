@@ -2,16 +2,11 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        int age = 21;
-        int personQuantity = 2;
-        boolean isPar = personQuantity > 1;
-        boolean canInput = age >= 18 && isPar;
+        int count = 0;
 
-        if (canInput) {
-            print("Usted puede entrar");
-            print("Bienvenido");
-        } else {
-            print("Usted no tiene permitido entrar");
+        while(count < 10) {
+            count++;
+            print(count);
         }
 
     }
