@@ -9,7 +9,9 @@ public class Program {
     accountB.balance = 500;
 
     account.print();
-    System.out.println();
+
+    System.out.println(); 
+    
     accountB.print();
 
   }
