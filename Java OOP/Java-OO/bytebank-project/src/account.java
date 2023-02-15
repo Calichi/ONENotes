@@ -6,10 +6,11 @@ public class Account {
   String titular;
 
   public void print() {
-    print("Balance", balance);
+    print("Titular", titular);
     print("Agency", agency);
     print("Number", number);
-    print("Titular", titular);
+    print("Balance", balance);
+
   }
 
   private void print(String attribute, Object value) {
