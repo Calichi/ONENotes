@@ -8,6 +8,7 @@ public class Program {
     account.depositar(10);
 
     System.out.println();
+    System.out.println(account.retirar(30));
     account.print();
     System.out.println();
 

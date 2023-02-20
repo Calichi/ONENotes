@@ -5,15 +5,25 @@ public class Account {
   int number;
   String titular;
 
-  public void depositar(double balance) {
-    this.balance += balance;
+  public void depositar(double value) {
+    this.balance += value;
+  }
+
+  public boolean retirar(double value) {
+    boolean balanceStatus = value <= this.balance;
+
+    if(balanceStatus) {
+      this.balance -= value;
+    }
+
+    return balanceStatus;
   }
 
   public void print() {
-    print("Titular", titular);
-    print("Agency", agency);
-    print("Number", number);
-    print("Balance", balance);
+    print("Titular", this.titular);
+    print("Agency", this.agency);
+    print("Number", this.number);
+    print("Balance", this.balance);
   }
 
   private void print(String attribute, Object value) {
