@@ -4,7 +4,7 @@ public class Program {
 
     Account account = new Account();
 
-    account.Depositar(10);
+    account.depositar(10);
 
     System.out.println();
     account.print();

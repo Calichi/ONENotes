@@ -5,7 +5,7 @@ public class Account {
   int number;
   String titular;
 
-  public void Depositar(double value) {
+  public void depositar(double value) {
     this.balance += value;
   }
 
