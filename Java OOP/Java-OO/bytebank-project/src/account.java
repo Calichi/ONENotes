@@ -19,6 +19,16 @@ public class Account {
     return balanceStatus;
   }
 
+  public boolean transferir(double value, Account account) {
+    boolean feasibleOperation = this.balance >= value;
+    if(feasibleOperation) {
+      this.balance -= value;
+      account.depositar(value);
+    }
+
+    return feasibleOperation;
+  }
+
   public void print() {
     print("Titular", this.titular);
     print("Agency", this.agency);
