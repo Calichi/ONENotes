@@ -5,8 +5,8 @@ public class Account {
   int number;
   String titular;
 
-  public void depositar(double value) {
-    this.balance += value;
+  public void depositar(double balance) {
+    this.balance += balance;
   }
 
   public void print() {
