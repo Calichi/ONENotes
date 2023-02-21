@@ -1,6 +1,6 @@
 public class Account {
 
-  double balance;
+  private double balance;
   int agency;
   int number;
   Client titular = new Client();
