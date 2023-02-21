@@ -1,8 +1,8 @@
 public class Account {
 
   private double balance;
-  int agency;
-  int number;
+  private int agency;
+  private int number;
   Client titular = new Client();
 
   public void depositar(double value) {
@@ -28,6 +28,26 @@ public class Account {
 
     return feasibleOperation;
   }
+
+
+  public double getBalance() {
+    return this.balance;
+  }
+
+  public void setAgency(int agency) {
+    if(agency > 0) {
+      this.agency = agency;
+    }
+  }
+
+  public int getAgency() {
+    return this.agency;
+  }
+
+  public void setNumber(int number) {
+    this.number = number;
+  }
+
 
   public void print() {
     print("Titular", this.titular.name);
