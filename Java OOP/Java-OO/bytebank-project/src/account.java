@@ -3,7 +3,7 @@ public class Account {
   private double balance;
   private int agency;
   private int number;
-  Client titular = new Client();
+  private Client titular = new Client();
 
   public void depositar(double value) {
     this.balance += value;
@@ -48,9 +48,13 @@ public class Account {
     this.number = number;
   }
 
+  public void setTitular(Client titular) {
+    this.titular = titular;
+  }
+
 
   public void print() {
-    print("Titular", this.titular.name);
+    print("Titular", this.titular.getName());
     print("Agency", this.agency);
     print("Number", this.number);
     print("Balance", this.balance);
