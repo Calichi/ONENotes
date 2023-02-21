@@ -2,19 +2,17 @@ public class Program {
 
   public static void main(String[] args) {
 
+    Client carlos  = new Client();
     Account account = new Account();
-    Account accountB = new Account();
 
-    account.depositar(1000);
+    carlos.name = "Carlos";
+    carlos.document = "55555555";
+    carlos.phone = "8991903658";
 
-    System.out.println();
-    System.out.printf("Estado de la transferencia: %1s", account.transferir(400, accountB));
-    System.out.println();
+    account.agency = 1;
+    account.titular = carlos;
+
     account.print();
-    System.out.println();
-    accountB.print();
-    System.out.println();
-
   }
 
 }
