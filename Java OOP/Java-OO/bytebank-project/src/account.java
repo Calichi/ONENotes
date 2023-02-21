@@ -3,7 +3,7 @@ public class Account {
   double balance;
   int agency;
   int number;
-  Client titular;
+  Client titular = new Client();
 
   public void depositar(double value) {
     this.balance += value;

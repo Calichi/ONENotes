@@ -4,8 +4,7 @@ public class Program {
 
     Account account = new Account();
 
-    account.titular = new Client();
-    //account.titular.name = "Carlos";
+    account.titular.name = "Carlos";
 
     account.print();
   }
