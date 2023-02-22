@@ -5,6 +5,10 @@ public class Account {
   private int number;
   private Client titular = new Client();
 
+  public Account() {
+    
+  }
+
   public void depositar(double value) {
     this.balance += value;
   }
