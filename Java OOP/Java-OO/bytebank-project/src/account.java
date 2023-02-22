@@ -1,5 +1,7 @@
 public class Account {
 
+  private static int instances = 0;
+
   private double balance;
   private int agency;
   private int number;
@@ -7,6 +9,9 @@ public class Account {
 
   public Account(int agency) {
     this.agency = this.validateAgency(agency);
+    instances++;
+    System.out.printf("Instancias creadas: %1s", instances);
+    System.out.println();
   }
 
   public void depositar(double value) {
