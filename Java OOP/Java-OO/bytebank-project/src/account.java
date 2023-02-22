@@ -5,8 +5,8 @@ public class Account {
   private int number;
   private Client titular = new Client();
 
-  public Account() {
-    
+  public Account(int agency) {
+    this.agency = this.validateAgency(agency);
   }
 
   public void depositar(double value) {
@@ -38,10 +38,8 @@ public class Account {
     return this.balance;
   }
 
-  public void setAgency(int agency) {
-    if(agency > 0) {
-      this.agency = agency;
-    }
+  private int validateAgency(int agency) {
+    return agency > 0 ? agency : 1;
   }
 
   public int getAgency() {
