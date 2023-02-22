@@ -2,6 +2,10 @@ public class Account {
 
   private static int instances = 0;
 
+  public static int getInstances() {
+    return instances;
+  }
+
   private double balance;
   private int agency;
   private int number;
