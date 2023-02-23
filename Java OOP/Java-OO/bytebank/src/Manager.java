@@ -14,9 +14,8 @@ public class Manager extends Funcionario {
     return this.key == key;
   }
 
-  @Override
   public double getBonus() {
-    return super.getSalary();
+    return this.getSalary() + super.getBonus();
   }
 
 }

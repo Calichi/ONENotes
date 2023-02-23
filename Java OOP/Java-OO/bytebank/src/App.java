@@ -10,7 +10,7 @@ public class App {
 
         carlos.setName("Carlos");
         carlos.setDocument("88888888");
-        carlos.setSalary(2000);
+        carlos.setSalary(6000);
         carlos.setKey("AluraCursosOnline");
 
         System.out.println(victoria.getSalary());
