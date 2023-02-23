@@ -11,11 +11,13 @@ public class App {
         carlos.setName("Carlos");
         carlos.setDocument("88888888");
         carlos.setSalary(2000);
+        carlos.setKey("AluraCursosOnline");
 
         System.out.println(victoria.getSalary());
         System.out.println(victoria.getBonus());
 
         System.out.println(carlos.getSalary());
         System.out.println(carlos.getBonus());
+        System.out.println(carlos.login("AluraCursosOnline"));
     }
 }
