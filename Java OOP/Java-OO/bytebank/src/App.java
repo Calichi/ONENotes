@@ -1,17 +1,14 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Funcionario carlos = new Funcionario();
-        Manager victoria = new Manager();
-        Counter reyli = new Counter();
+        CurrentAccount currentAccount = new CurrentAccount(1);
+        SavingAccount savingAccount = new SavingAccount(1);
 
-        carlos.setSalary(2000);
-        victoria.setSalary(10000);
-        reyli.setSalary(5000);
+        currentAccount.depositar(2000);
+        currentAccount.transferir(1000, savingAccount);
 
-        BonusManagement.registerSalary(carlos);
-        BonusManagement.registerSalary(victoria);
-        BonusManagement.registerSalary(reyli);
+        currentAccount.print();
+        savingAccount.print();
 
     }
 }
