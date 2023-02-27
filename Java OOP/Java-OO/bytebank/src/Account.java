@@ -1,4 +1,4 @@
-public class Account {
+public abstract class Account {
 
   private static int instances = 0;
 
@@ -6,7 +6,7 @@ public class Account {
     return instances;
   }
 
-  private double balance;
+  protected double balance;
   private int agency;
   private int number;
   private Client titular = new Client();
@@ -18,9 +18,7 @@ public class Account {
     System.out.println();
   }
 
-  public void depositar(double value) {
-    this.balance += value;
-  }
+  public abstract void depositar(double value);
 
   public boolean retirar(double value) {
     boolean balanceStatus = value <= this.balance;
