@@ -1,13 +1,14 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Funcionario victoria = new Manager();
-        Manager carlos = new Manager();
+        Funcionario carlos = new Funcionario();
+        Manager victoria = new Manager();
 
-        victoria.setName("Victoria");
-        victoria.setSalary(2000);
-        carlos.setName("Carlos");
-        carlos.setSalary(10000);
+        carlos.setSalary(2000);
+        victoria.setSalary(10000);
+
+        BonusManagement.registerSalary(carlos);
+        BonusManagement.registerSalary(victoria);
 
     }
 }
