@@ -8,9 +8,5 @@ public class BonusManagement {
     System.out.println();
     return sum;
   }
-
-  public static double registerSalary(Manager manager) {
-    return registerSalary((Funcionario)manager);
-  }
   
 }
