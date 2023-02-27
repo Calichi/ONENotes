@@ -15,7 +15,7 @@ public class Manager extends Funcionario {
   }
 
   public double getBonus() {
-    return this.getSalary() + super.getBonus();
+    return this.getSalary() * 1.05;
   }
 
 }
