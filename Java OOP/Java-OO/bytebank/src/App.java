@@ -1,23 +1,13 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Funcionario victoria = new Funcionario();
+        Funcionario victoria = new Manager();
         Manager carlos = new Manager();
 
         victoria.setName("Victoria");
-        victoria.setDocument("88888888");
-        victoria.setSalary(1200);
-
+        victoria.setSalary(2000);
         carlos.setName("Carlos");
-        carlos.setDocument("88888888");
-        carlos.setSalary(6000);
-        carlos.setKey("AluraCursosOnline");
+        carlos.setSalary(10000);
 
-        System.out.println(victoria.getSalary());
-        System.out.println(victoria.getBonus());
-
-        System.out.println(carlos.getSalary());
-        System.out.println(carlos.getBonus());
-        System.out.println(carlos.login("AluraCursosOnline"));
     }
 }
