@@ -1,9 +1,9 @@
-public class Client extends Authenticatable {
+public class Client implements Authenticatable {
 
   private String name;
   private String document;
   private String phone;
-  
+  private String key;
 
   public String getName() {
     return this.name;
@@ -27,6 +27,16 @@ public class Client extends Authenticatable {
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+  @Override
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+  @Override
+  public boolean login(String key) {
+    return this.key == key;
   }
 
 }
