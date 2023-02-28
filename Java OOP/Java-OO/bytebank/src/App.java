@@ -1,14 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        CurrentAccount currentAccount = new CurrentAccount(1);
-        SavingAccount savingAccount = new SavingAccount(1);
+       InternalSystem sys = new InternalSystem();
+       Manager manager1 = new Manager();
+       Administrator admin = new Administrator();
 
-        currentAccount.depositar(2000);
-        currentAccount.transferir(1000, savingAccount);
-
-        currentAccount.print();
-        savingAccount.print();
+       sys.autenticar(manager1);
+       sys.autenticar(admin);
 
     }
 }

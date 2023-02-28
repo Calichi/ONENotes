@@ -1,21 +1,7 @@
-public class Manager extends Funcionario {
-
-  private String key;
-
-  public String getKey() {
-    return this.key;
-  }
-
-  public void setKey(String key) {
-    this.key = key;
-  }
-
-  public boolean login(String key) {
-    return this.key == key;
-  }
+public class Manager extends Authenticatable {
 
   public double getBonus() {
-    return this.getSalary() * 1.05;
+    return 2000;//this.getSalary() * 1.05;
   }
 
 }
