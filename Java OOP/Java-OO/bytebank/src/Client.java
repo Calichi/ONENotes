@@ -4,6 +4,11 @@ public class Client implements Authenticatable {
   private String document;
   private String phone;
   private String key;
+  private AuthenticationUtility utility;
+
+  public Client() {
+    this.utility = new AuthenticationUtility();
+  }
 
   public String getName() {
     return this.name;
@@ -36,7 +41,7 @@ public class Client implements Authenticatable {
 
   @Override
   public boolean login(String key) {
-    return this.key == key;
+    return this.utility.login(key);
   }
 
 }

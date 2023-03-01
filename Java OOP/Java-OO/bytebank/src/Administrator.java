@@ -1,6 +1,11 @@
 public class Administrator extends Funcionario implements Authenticatable {
 
   private String key;
+  private AuthenticationUtility utility;
+
+  public Administrator() {
+    this.utility = new AuthenticationUtility();
+  }
 
   @Override
   public double getBonus() {
@@ -14,7 +19,7 @@ public class Administrator extends Funcionario implements Authenticatable {
 
   @Override
   public boolean login(String key) {
-    return this.key == key;
+    return this.utility.login(key);
   }
   
 }
