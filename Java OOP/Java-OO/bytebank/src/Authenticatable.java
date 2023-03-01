@@ -1,7 +1,7 @@
-public abstract interface Authenticatable {
+public interface Authenticatable {
 
-  public abstract void setKey(String key);
+  public void setKey(String key);
 
-  public abstract boolean login(String key);
+  public boolean login(String key);
   
 }
