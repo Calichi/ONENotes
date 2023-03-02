@@ -14,9 +14,19 @@ public class Flow {
     private static void method2() {
         System.out.println("Inicio del método 2");
         for(int i = 1; i <= 5; i++) {
-            int num = 0;
-            System.out.println(i);
-            System.out.println(i/num);
+            try {
+                /*int num = 0;
+                System.out.println(i);
+                System.out.println(i/num);*/
+                String test = null;
+                System.out.println(test.toString());
+            } catch(ArithmeticException | NullPointerException exception) {
+                System.out.println("Atrapo una Exception");
+                System.out.println(exception.getMessage());
+                exception.printStackTrace();
+            }
+
+
         }
         System.out.println("Fin del método 2");
     }
