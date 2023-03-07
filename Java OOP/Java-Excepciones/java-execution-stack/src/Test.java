@@ -1,10 +1,12 @@
 public class Test {
   public static void main(String[] args) {
-    try {
-      Account a = new Account();
-      a.deposita();
-    } catch(Exception e) {
+    Connection c = new Connection();
+    try{
+      c.leerDatos();
+    } catch(IllegalStateException e) {
+      System.out.println("Recibiendo Escepción");
       e.printStackTrace();
     }
+
   }
 }
