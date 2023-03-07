@@ -4,8 +4,11 @@ public class Test {
     try{
       c.leerDatos();
     } catch(IllegalStateException e) {
-      System.out.println("Recibiendo Escepción");
+      System.out.println("Recibiendo Excepción");
       e.printStackTrace();
+    } finally {
+      System.out.println("Ejecutando finally");
+      c.cerrar();
     }
 
   }
