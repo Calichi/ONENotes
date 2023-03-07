@@ -15,7 +15,7 @@ public class Flow {
         System.out.println("Fin del método 1");
     }
 
-    private static void method2() {
+    private static void method2() throws MyException{
         System.out.println("Inicio del método 2");
         throw new MyException("Mi excepción fue lanzada");
     }
