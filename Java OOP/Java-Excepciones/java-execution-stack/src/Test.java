@@ -1,14 +1,10 @@
 public class Test {
-  public static void main(String[] args) {
-    Connection c = new Connection();
-    try{
+  public static void main(String[] args) throws Exception {
+    try(Connection c = new Connection()) {
       c.leerDatos();
     } catch(IllegalStateException e) {
-      System.out.println("Recibiendo Excepción");
+      System.out.println("Ejecutando catch");
       e.printStackTrace();
-    } finally {
-      System.out.println("Ejecutando finally");
-      c.cerrar();
     }
 
   }

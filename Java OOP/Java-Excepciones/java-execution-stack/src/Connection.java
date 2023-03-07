@@ -1,5 +1,5 @@
 
-public class Connection {
+public class Connection implements AutoCloseable {
 
   public Connection() {
     System.out.println("Abriendo conexión");
@@ -12,6 +12,11 @@ public class Connection {
 
   public void cerrar() {
     System.out.println("Cerrando conexión");
+  }
+
+  @Override
+  public void close() throws Exception {
+    this.cerrar();
   }
   
 }
