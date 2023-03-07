@@ -12,9 +12,9 @@ public class Flow {
     }
 
     private static void method2() {
-        System.out.println("Inicio del método 2");
-        Account a = new Account();
-        throw new ArithmeticException();
+        /*System.out.println("Inicio del método 2");
+        throw new ArithmeticException();*/
+        method2();
     }
 
 }
