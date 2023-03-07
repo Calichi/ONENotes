@@ -7,14 +7,17 @@ public class Flow {
 
     private static void method1() {
         System.out.println("Inicio del método 1");
-        method2();
+        try {
+            method2();
+        } catch(MyException e) {
+            e.printStackTrace();
+        }
         System.out.println("Fin del método 1");
     }
 
     private static void method2() {
-        /*System.out.println("Inicio del método 2");
-        throw new ArithmeticException();*/
-        method2();
+        System.out.println("Inicio del método 2");
+        throw new MyException("Mi excepción fue lanzada");
     }
 
 }
