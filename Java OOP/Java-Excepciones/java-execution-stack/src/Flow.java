@@ -9,7 +9,7 @@ public class Flow {
         System.out.println("Inicio del método 1");
         try {
             method2();
-        } catch(MyException e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
         System.out.println("Fin del método 1");
