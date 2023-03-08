@@ -1,5 +1,6 @@
 package alura.com.model;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Course /*implements Comparable<Course>*/ {
   }
 
   public List<Module> getModules() {
-    return modules;
+    return Collections.unmodifiableList(modules);
   }
 
   public void setModules(List<Module> modules) {
