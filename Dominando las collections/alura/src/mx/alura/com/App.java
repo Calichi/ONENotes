@@ -1,33 +1,41 @@
 package mx.alura.com;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String var1 = "Ejemplo 1";
-        String var2 = "Ejemplo 2";
-        String var3 = "Ejemplo 3";
-        String var4 = "Ejemplo 4";
         ArrayList<String> list = new ArrayList<String>();
 
-        list.add(var1);
-        list.add(var2);
-        list.add(var3);
-        list.add(var4);
+        list.add("Geometría");
+        list.add("Fisica");
+        list.add("Quimica");
+        list.add("Historia");
+
+        System.out.println();
 
         System.out.println(list);
-        System.out.println(list.size());
+        Collections.sort(list);
+        System.out.println(list);
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println(list);
 
-        for(int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
+        System.out.println();
+        
+        list.sort(Comparator.reverseOrder());
+        System.out.println(list);
+        list.sort(Comparator.naturalOrder());
+        System.out.println(list);
 
-        for(String item : list) {
-            System.out.println(item);
-        }
+        System.out.println();
 
-        list.forEach(item -> {
-            System.out.println(item);
-        });
+        List<String> newList = list.stream().sorted().collect(Collectors.toList());
+        System.out.println(newList);
+
+        System.out.println();
+
     }
 }
