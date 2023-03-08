@@ -1,6 +1,6 @@
 package mx.alura.com;
 
-public class Course {
+public class Course /*implements Comparable<Course>*/ {
   
   private String name;
   private int time;
@@ -30,4 +30,9 @@ public class Course {
   public String toString() {
     return "Course [name=" + name + "]";
   }
+
+  /*@Override
+  public int compareTo(Course o) {
+    return this.name.compareTo(o.getName());
+  }*/
 }
