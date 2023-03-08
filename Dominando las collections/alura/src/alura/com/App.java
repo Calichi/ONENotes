@@ -1,25 +1,46 @@
 package alura.com;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-import alura.com.model.Module;
-import alura.com.model.Course;
-
 public class App {
+
+    public static final List<List<Integer>> lists = new ArrayList<List<Integer>>() {{
+        add(new LinkedList<Integer>());
+        add(new ArrayList<Integer>());
+    }};
+
     public static void main(String[] args) throws Exception {
-        ArrayList<Course> list = new ArrayList<Course>();
-        Course course = new Course("Collections", 30);
+        for(List<Integer> list : lists) {
+            final String implementName = list.getClass().getSimpleName();
+            long begin = System.currentTimeMillis();
+            for(int i = 0; i < 100000; i++) {
+                list.add(i);
+            }
+            long end = System.currentTimeMillis();
+            long duration = end - begin;
+            System.out.println(implementName + " add: " + duration);
 
-        course.addModule(new Module("ArrayList"));
-        course.addModule(new Module("LinkedList"));
-        course.addModule(new Module("List"));
-        course.addModule(new Module("Inmutable"));
+            //get
 
-        List<Module> modules = course.getModules();
+            begin = System.currentTimeMillis();
+            for(int i = 0; i < 100000; i++) {
+                list.get(i);
+            }
+            end = System.currentTimeMillis();
+            duration = end - begin;
+            System.out.println(implementName + " get: " + duration);
 
-        list.add(course);
+            //remove
 
-        System.out.println(modules);
+            begin = System.currentTimeMillis();
+            for(int i = 99999; i >= 0; i--) {
+                list.remove(i);
+            }
+            end = System.currentTimeMillis();
+            duration = end - begin;
+            System.out.println(implementName + " remove: " + duration);
+        }
     }
 }
