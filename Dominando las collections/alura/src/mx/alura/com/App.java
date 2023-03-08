@@ -17,5 +17,17 @@ public class App {
 
         System.out.println(list);
         System.out.println(list.size());
+
+        for(int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
+        for(String item : list) {
+            System.out.println(item);
+        }
+
+        list.forEach(item -> {
+            System.out.println(item);
+        });
     }
 }
