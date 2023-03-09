@@ -1,38 +1,23 @@
 package alura.com;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
+
+import alura.com.model.Student;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Collection<String> students = new HashSet<>();
-        students.add("Luis Miguel");
-        students.add("Pepito los palotes");
-        students.add("Juan Carlos");
-        students.add("Gustavo Sanchez");
-        students.add("Pedro Pedrito");
-        students.add("Marcia Maria");
-        students.add("Marcia Maria");
-        students.add("Gustavo Sanchez");
+        Collection<Student> students = new ArrayList<>();
 
-        System.out.println(
-            students
-                .stream()
-                .max(Comparator.comparingInt(String::length))
-                .get()
-                .length()
-        );
+        students.add(new Student("Luis Miguel", "001"));
+        students.add(new Student("Pepito los palotes", "002"));
+        students.add(new Student("Juan Carlos", "003"));
+        students.add(new Student("Gustavo Sanchez", "004"));
+        students.add(new Student("Pedro Pedrito", "005"));
+        students.add(new Student("Marcia Maria", "006"));
+        students.add(new Student("Claudia Patricia", "007"));
 
-        System.out.println(students.contains("Pedro Pedrito"));
-
-        students.removeIf(
-            student -> "Pedro Pedrito".equalsIgnoreCase(student)
-        );
-
-        students.forEach(
-            student -> System.out.println(student)
-        );
+        System.out.println();
     }
 }
