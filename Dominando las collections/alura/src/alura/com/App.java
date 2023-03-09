@@ -1,6 +1,7 @@
 package alura.com;
 
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 
 public class App {
@@ -15,6 +16,20 @@ public class App {
         students.add("Marcia Maria");
         students.add("Marcia Maria");
         students.add("Gustavo Sanchez");
+
+        System.out.println(
+            students
+                .stream()
+                .max(Comparator.comparingInt(String::length))
+                .get()
+                .length()
+        );
+
+        System.out.println(students.contains("Pedro Pedrito"));
+
+        students.removeIf(
+            student -> "Pedro Pedrito".equalsIgnoreCase(student)
+        );
 
         students.forEach(
             student -> System.out.println(student)
