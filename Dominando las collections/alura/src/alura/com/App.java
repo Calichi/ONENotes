@@ -1,46 +1,32 @@
 package alura.com;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import alura.com.model.Course;
 
 public class App {
-
-    public static final List<List<Integer>> lists = new ArrayList<List<Integer>>() {{
-        add(new LinkedList<Integer>());
-        add(new ArrayList<Integer>());
-    }};
-
     public static void main(String[] args) throws Exception {
-        for(List<Integer> list : lists) {
-            final String implementName = list.getClass().getSimpleName();
-            long begin = System.currentTimeMillis();
-            for(int i = 0; i < 100000; i++) {
-                list.add(i);
-            }
-            long end = System.currentTimeMillis();
-            long duration = end - begin;
-            System.out.println(implementName + " add: " + duration);
+        ArrayList<Course> courses = new ArrayList<Course>();
+        courses.add(new Course("Historia", 30));
+        courses.add(new Course("Algebra", 10));
+        courses.add(new Course("Aritmetica", 20));
+        courses.add(new Course("Geometria", 50));
 
-            //get
-
-            begin = System.currentTimeMillis();
-            for(int i = 0; i < 100000; i++) {
-                list.get(i);
-            }
-            end = System.currentTimeMillis();
-            duration = end - begin;
-            System.out.println(implementName + " get: " + duration);
-
-            //remove
-
-            begin = System.currentTimeMillis();
-            for(int i = 99999; i >= 0; i--) {
-                list.remove(i);
-            }
-            end = System.currentTimeMillis();
-            duration = end - begin;
-            System.out.println(implementName + " remove: " + duration);
+        int time = 0;
+        for(Course course : courses) {
+            time += course.getTime();
         }
+
+        System.out.println(time);
+
+        //stream
+
+        System.out.println(
+            courses
+                .stream()
+                .filter(course -> !course.getName().equalsIgnoreCase("Historia"))
+                .mapToInt(Course::getTime)
+                .max()
+                .getAsInt()
+        );
     }
 }
