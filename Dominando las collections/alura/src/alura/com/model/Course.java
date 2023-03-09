@@ -1,6 +1,8 @@
 package alura.com.model;
 
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,7 +11,8 @@ public class Course /*implements Comparable<Course>*/ {
   private String name;
   private int time;
   private List<Module> modules = new LinkedList<>();
-  
+  private Collection<Student> students = new HashSet<Student>();
+
   public Course(String name, int time, List<Module> modules) {
     this.name = name;
     this.time = time;
@@ -33,6 +36,14 @@ public class Course /*implements Comparable<Course>*/ {
     this.modules.add(m);
   }
 
+  public void addStudent(Student student) {
+    students.add(student);
+  }
+
+  public boolean studentContains(Student student) {
+    return students.contains(student);
+  }
+
   public String getName() {
     return name;
   }
@@ -52,6 +63,10 @@ public class Course /*implements Comparable<Course>*/ {
   @Override
   public String toString() {
     return "Course [name=" + name + "]";
+  }
+
+  public Collection<Student> getStudents() {
+    return students;
   }
 
   /*@Override
