@@ -1,7 +1,5 @@
 package alura.com;
 
-import java.util.Optional;
-
 import alura.com.model.Course;
 import alura.com.model.Student;
 
@@ -18,15 +16,8 @@ public class App {
         course.addStudent(new Student("Marcia Maria", "006"));
         course.addStudent(new Student("Claudia Patricia", "007"));
 
-        Optional<Student> student = course.getStudents()
-            .stream()
-            .filter(s -> "003".equalsIgnoreCase(s.getCode()))
-            .findFirst();
-
-        if(student.isPresent())
-            System.out.println(student.get());
-
-        Student studentMap = course.getStudentsMap().get("003");
-        System.out.println(studentMap);
+        course.getStudentsMap().forEach((code, student) -> {
+            System.out.println(student);
+        });
     }
 }
