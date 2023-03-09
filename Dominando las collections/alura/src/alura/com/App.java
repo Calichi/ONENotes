@@ -1,20 +1,23 @@
 package alura.com;
 
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.Set;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Set<String> students = new HashSet<>();
+        Collection<String> students = new HashSet<>();
         students.add("Luis Miguel");
         students.add("Pepito los palotes");
         students.add("Juan Carlos");
+        students.add("Gustavo Sanchez");
         students.add("Pedro Pedrito");
         students.add("Marcia Maria");
+        students.add("Marcia Maria");
+        students.add("Gustavo Sanchez");
 
-        for(String student : students) {
-            System.out.println(student);
-        }
+        students.forEach(
+            student -> System.out.println(student)
+        );
     }
 }
