@@ -2,9 +2,11 @@ package alura.com.model;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Course {
   
@@ -12,6 +14,7 @@ public class Course {
   private int time;
   private List<Module> modules = new LinkedList<>();
   private Collection<Student> students = new LinkedHashSet<Student>();
+  private Map<String, Student> studentsMap = new HashMap<>();
 
   public Course(String name, int time, List<Module> modules) {
     this.name = name;
@@ -38,6 +41,7 @@ public class Course {
 
   public void addStudent(Student student) {
     students.add(student);
+    studentsMap.put(student.getCode(), student);
   }
 
   public boolean studentContains(Student student) {
@@ -67,5 +71,9 @@ public class Course {
 
   public Collection<Student> getStudents() {
     return students;
+  }
+
+  public Map<String, Student> getStudentsMap() {
+    return studentsMap;
   }
 }
