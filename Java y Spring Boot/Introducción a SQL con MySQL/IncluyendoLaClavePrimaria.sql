@@ -1,0 +1,2 @@
+USE jugos;
+ALTER TABLE tbproductos ADD PRIMARY KEY(PRODUCTO);
